@@ -1,0 +1,20 @@
+auth0:
+  audience: ${AUTH0_AUDIENCE}
+  url: ${AUTH0_URL}
+  client-id: ${AUTH0_CLIENT_ID}
+  client-secret: ${AUTH0_CLIENT_SECRET}
+spring:
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          jwk-set-uri: ${JWK_SET_URI}
+          issuer-uri: ${JWT_ISSUER_URI}
+
+feign:
+  client:
+    config:
+      default:
+        connectTimeout: 5000
+        readTimeout: 5000
+        loggerLevel: full
